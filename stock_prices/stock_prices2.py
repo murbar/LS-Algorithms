@@ -4,7 +4,7 @@ import argparse
 
 
 def find_max_profit(prices):
-    highest_profit = -float('inf')
+    highest_profit = -float('inf')  # account for negative values
 
     for i, buy_price in enumerate(prices):
         subsequent_prices = prices[i+1:]

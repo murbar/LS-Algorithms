@@ -20,6 +20,8 @@ def recipe_batches(recipe, ingredients):
 
     return min(counts)
 
+# O(n) (items in recipe) time, O(1) space
+
 
 if __name__ == '__main__':
     # Change the entries of these dictionaries to test

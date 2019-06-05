@@ -16,6 +16,8 @@ def find_max_profit(prices):
         #         max_profit = profit
     return max(profits)
 
+# O(n) time, Q(1) space
+
 
 if __name__ == '__main__':
     # This is just some code to accept inputs from the command line

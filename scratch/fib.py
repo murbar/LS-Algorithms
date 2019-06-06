@@ -37,6 +37,7 @@ def cached_fib(n):
     return fib(n)
 
 
+# O(n)
 def iterative_fib(n):
     answer = 0
     n1, n2 = 1, 0
@@ -46,6 +47,7 @@ def iterative_fib(n):
     return answer
 
 
+# O(n)
 def bottom_up_fib(n):
     if n == 1 or n == 2:
         return 1

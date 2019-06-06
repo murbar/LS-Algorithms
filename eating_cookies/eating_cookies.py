@@ -17,9 +17,6 @@ def eating_cookies(n, cache=None):
     if n == 2:
         return 2
 
-    if n == 3:
-        return 4
-
     result = eating_cookies(
         n - 1, cache) + eating_cookies(n - 2, cache) + eating_cookies(n - 3, cache)
 

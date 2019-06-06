@@ -5,12 +5,21 @@ import sys
 
 def rock_paper_scissors(n):
     plays = ['rock', 'paper', 'scissors']
-    cache = [None for i in range(n+1)]
+    permutations = []
+    # cache = [None for i in range(n+1)]
 
-    def permute(n):
-        pass
+    def permute(round, round_number):
+        for play in plays:
+            round.append(play)
+            if round_number == n:
+                permutations.append([*round])
+            else:
+                permute(round, round_number + 1)
+            round.pop()
 
-    return permute(n)
+    permute([], 1)
+
+    return permutations
 
 
 if __name__ == "__main__":

@@ -8,18 +8,17 @@ import sys
 def rock_paper_scissors(n):
     plays = ['rock', 'paper', 'scissors']
     permutations = []
-    # cache = [None for i in range(n+1)]
+    cache = [None for i in range(n+1)]
 
-    def permute(round, round_number):
-        for play in plays:
-            round.append(play)
-            if round_number == n:
-                permutations.append([*round])
-            else:
-                permute(round, round_number + 1)
-            round.pop()
+    def play(rounds, accumulator=[]):
+        if rounds == 0:
+            permutations.append([*accumulator])
+            return
 
-    permute([], 1)
+        for p in plays:
+            play(rounds - 1, accumulator + [p])
+
+    play(n)
 
     return permutations
 

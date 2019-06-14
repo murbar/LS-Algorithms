@@ -4,19 +4,19 @@ import argparse
 
 
 def find_max_profit(prices):
-    profits = []
-    for i in range(len(prices) - 1):
-        price = prices[i]
-        subsequent_prices = prices[i+1:]
-        highest_price = max(subsequent_prices)
-        profits.append(highest_price - price)
-        # for s in subsequent_prices:
-        #     profit = s - p
-        #     if profit > max_profit:
-        #         max_profit = profit
-    return max(profits)
+    highest_profit = -float('inf')  # account for negative values
 
-# O(n) time, Q(1) space
+    for i, buy_price in enumerate(prices):
+        subsequent_prices = prices[i+1:]
+
+        if subsequent_prices:
+            max_price = max(subsequent_prices)
+            profit = max_price - buy_price
+
+            if profit > highest_profit:
+                highest_profit = profit
+
+    return highest_profit
 
 
 if __name__ == '__main__':
